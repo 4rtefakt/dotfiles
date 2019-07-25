@@ -1,0 +1,3 @@
+#!/bin/bash
+str="*$@*"
+find /home/kore/Music/ -name "$str"

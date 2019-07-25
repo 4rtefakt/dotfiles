@@ -1,0 +1,4 @@
+#!/bin/bash
+file=$(ls ~/Downloads/*.docx | fzf -i --preview "docx2txt < {}" | cut -f1 -d '.')
+[ -z "$file" ] && exit
+docx2txt < "$file.docx" > "$(pwd)/pa"

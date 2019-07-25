@@ -1,0 +1,6 @@
+#!/bin/bash
+author="$1"
+song="${*:2}"
+wget -q $(youtube-dl -g -f bestaudio "ytsearch:$author $song") -O "/home/kore/Music/$author - $song.mp3" &
+wait
+notify-send "'$author - $song' downloaded"

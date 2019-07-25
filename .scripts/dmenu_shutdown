@@ -1,0 +1,3 @@
+#!/bin/bash
+
+[ $(printf "no\nyes" | dmenu -i -p "shutdown?" -nb darkred -sb red -sf white -nf gray ) = "yes" ] && shutdown -h now

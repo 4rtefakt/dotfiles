@@ -1,0 +1,4 @@
+#!/bin/bash
+display=$(xrandr -q | grep ' connected' | cut -f1 -d' ' | grep -v 'eDP-1') 
+[ ! -z "$display" ] && xrandr --auto --output "$display" --mode 1920x1080 --left-of eDP-1 || xrandr --auto
+set_wallpaper

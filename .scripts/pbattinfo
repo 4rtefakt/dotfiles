@@ -1,0 +1,8 @@
+#!/bin/bash
+batt=$(battinfo | sed 's/\(.*\)%/\1/')
+[ $batt -ge 80 ] && echo "[#####]" && exit
+[ $batt -ge 60 ] && echo "[#### ]" && exit
+[ $batt -ge 40 ] && echo "[###  ]" && exit
+[ $batt -ge 20 ] && echo "[##   ]" && exit
+[ $batt -ge 10 ] && echo "[#   ]" && exit
+echo "[     ]"

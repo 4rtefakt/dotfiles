@@ -1,0 +1,7 @@
+#!/bin/bash
+script=$(ls -l "$HOME/.scripts"| awk '{print $9}' | grep -v '^$' | fzf -q "$1" -i --print-query --preview "bat --color always -n $HOME/.scripts/{-1}" | tac | sed 1q)
+
+[ -z $script ] && exit
+
+[[ ! -f "$HOME/.scripts/$script" ]] && printf '#!/bin/bash\n' >> "$HOME/.scripts/$script" && chmod +x "$HOME/.scripts/$script"
+vim "$HOME/.scripts/$script"

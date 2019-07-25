@@ -1,0 +1,6 @@
+#!/bin/bash
+while true ; do
+	#xsetroot -name "$(date +%H:%M) | $(pbattinfo) | $(cpuinfo) | $(raminfo)"
+	xsetroot -name "$(date +%H:%M) $(pbattinfo)"
+	sleep 30
+done
